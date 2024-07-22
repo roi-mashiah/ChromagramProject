@@ -1,4 +1,4 @@
-function [] = plot_images(im, compression_method, title, ylabels, parameter)
+function [] = plot_images(im, compression_method, title_str, ylabels, parameter)
 switch compression_method
     case "log"
         cmp_im = log10(1+ parameter*im);
@@ -23,7 +23,7 @@ yticks(1:size(cmp_im,1))
 ytickangle(15)
 yticklabels(ylabels)
 set(gca,'YDir','normal')
-title(strcat(title, " Compression - ", compression_method, " Parameter - ", num2str(parameter)))
+title(strcat(title_str, " Compression - ", compression_method, " Parameter - ", num2str(parameter)))
 colorbar
 end
 
